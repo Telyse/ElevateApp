@@ -77,12 +77,12 @@ https://docs.google.com/document/d/1LcgEKo-DE99YC8LJazYxDN32j6xN5aFt7HYxQ7W8lhI/
 
 
 // Link to Mural Board:
-https://app.mural.co/t/savvycoders2906/m/savvycoders2906/1739907223340/d797a8ee0dcb31929df79
-4abb8ba19f862adebf5
+https://app.mural.co/t/savvycoders2906/m/savvycoders2906/1739907223340/d797a8ee0dcb31929df794abb8b
+a19f862adebf5?sender=uf0f805df8cc065207a7d5283
 
 // Link to Flow Diagram:
-https://app.mural.co/t/savvycoders2906/m/savvycoders2906/1741213436559/8c0781323f5dd31d9e
-5fac3188beaf9539a2de47
+https://app.mural.co/t/savvycoders2906/m/savvycoders2906/1741213436559/8c0781323f5dd31d9e5fac3188b
+eaf9539a2de47?sender=uf0f805df8cc065207a7d5283
 
 // Link to Wireframe:
 **I apologize for how I'm providing this, i know that there were other ways. Ran out of time quickest
