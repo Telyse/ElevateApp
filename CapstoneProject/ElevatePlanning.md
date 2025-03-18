@@ -68,8 +68,8 @@ Grey, neon green, black, and white.
 4. https://www.mypersonaltrainerwebsite.com/blog/how-to-use-color-psychology-to-create-the-perfect-
 fitness-website
 5. https://www.storyly.io/post/basic-patterns-for-mobile-navigation-and-the-best-practices#:~:
-text=Mobile%20App%20Navigation%20Patterns%201%201.Navigation%20Menu%20%28Hamburger,...%206%206.Voic
-e%20...%207%207.Gesture-Based%20Navigation%20
+text=Mobile%20App%20Navigation%20Patterns%201%201.Navigation%20Menu%20%28Hamburger,...%206%206.Voice
+%20...%207%207.Gesture-Based%20Navigation%20
 6. https://learn.microsoft.com/en-us/windows/apps/design/basics/navigation-basics
 
 // Link to SWOT Analysis:
