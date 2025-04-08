@@ -1,5 +1,5 @@
 html {
-  background-color: rgb(61, 60, 60);
+  background-color: #3d3c3c;
   color:white;
 }
 
@@ -10,25 +10,16 @@ html {
 }
 
 header {
-  background: url(https://th.bing.com/th/id/OIP.7cRYFyLoDEDh4sRtM73vvwHaDg?w=376&h=166&c=7&r=0&o=5&dpr=1.3&pid=1.7);
   background-size: cover;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: black;
+  color: white;
 }
 
 nav {
   display: flex;
-  align-items: center;
-  flex-direction: row;
+  justify-content: center;
+  font-size: 30px;
 }
 
-nav {
-  padding: 1rem;
-  font-size: 20px;
-}
-
-#Intro-to-application {
-  font-size: large;
-}
