@@ -27,10 +27,12 @@ router.hooks({
     switch (view) {
       // Add a case for each view that needs data from an API
       case "home":
+        console.log(process.env.NINJAS_API_KEY);
         // Remove the appid from the URL inside your .get method and replace it with a template literal that references our 'process.env' Object
         axios
-        .get(` `)
+        .get(`https://api.api-ninjas.com/v1/exercises?appid=${process.env.NINJAS_API_KEY}`)
         .then(response => {
+          console.log(response);
           done();
         })
         .catch(err => {
@@ -41,7 +43,7 @@ router.hooks({
       case " ":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(` `)
+          .get(``)
           .then(response => {
              // Storing retrieved data in state
             // The dot chain variable access represents the following {storeFolder.stateFileViewName.objectAttribute}
