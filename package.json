@@ -27,14 +27,5 @@
     "mongoose": "^8.13.1",
     "navigo": "^8.11.1",
     "parcel": "^2.13.3"
-  },
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Telyse/ElevateApp.git"
-  },
-  "bugs": {
-    "url": "https://github.com/Telyse/ElevateApp/issues"
-  },
-  "homepage": "https://github.com/Telyse/ElevateApp#readme"
+  }
 }

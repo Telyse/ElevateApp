@@ -1,4 +1,6 @@
 export default {
   header: "training page",
-  view: "training"
+  view: "training",
+  workouts: [],
+  selected: ""
 };
