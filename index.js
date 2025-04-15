@@ -72,7 +72,7 @@ router.hooks({
         .then(response => {
           store.training.workouts = response.data
           console.log(store.training.workouts);
-          done();
+          router.navigate("/training");
         })
         .catch(err => {
           console.log(err);
