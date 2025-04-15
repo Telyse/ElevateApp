@@ -23,5 +23,13 @@ export default state => html`
     </select>
 
     <button id="my-button">Click Me!</button>
+
+    ${state.workouts
+      .map(workout => {
+        return `<tr>
+          <td>${workout.difficulty}</td>
+        </tr>`;
+      })
+      .join("")}
   </main>
 `;
