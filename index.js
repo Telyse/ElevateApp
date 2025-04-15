@@ -22,26 +22,12 @@ router.hooks({
   before: (done, match) => {
     // We need to know what view we are on to know what data to fetch
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
-    console.log();
     // Add a switch case statement to handle multiple routes
     switch (view) {
-      // Add a case for each view that needs data from an API
-      case "home":
-        // Remove the appid from the URL inside your .get method and replace it with a template literal that references our 'process.env' Object
-        axios
-        .get(` `)
-        .then(response => {
-          done();
-        })
-        .catch(err => {
-          console.log(err);
-          done();
-        });
-        break;
       case " ":
         // New Axios get request utilizing already made environment variable
         axios
-          .get(` `)
+          .get(``)
           .then(response => {
              // Storing retrieved data in state
             // The dot chain variable access represents the following {storeFolder.stateFileViewName.objectAttribute}
@@ -67,34 +53,33 @@ router.hooks({
   after: (match) => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
 
-    if (view === "order") {
-      // Add an event handler for the submit button on the form
-      document.querySelector("form").addEventListener("submit", event => {
-        event.preventDefault();
+    if (view === "training") {
+      const dropdown = document.getElementById("muscle-group");
+      dropdown.addEventListener("change", function() {
+        const selectedValue = this.value;
+        store.training.selected = selectedValue
+        console.log("Selected Muscle Group:", store.training.selected);
+      });
 
-        // Get the form element
-        const inputList = event.target.elements;
-        console.log("Input Element List", inputList);
-
-        console.log("request Body", requestData);
+      document.getElementById("my-button").addEventListener("click", () => {
 
         axios
-          // Make a POST request to the API to create a new pizza
-          .post(``)
-          .then(response => {
-          //  Then push the new pizza onto the Pizza state pizzas attribute, so it can be displayed in the pizza list
-            (response.data);
-            router.navigate(" ");
-          })
-          // If there is an error log it to the console
-          .catch(error => {
-            console.log("It puked", error);
-          });
+        .get(`${process.env.NINJAS_URL}?muscle=${store.training.selected}`, {
+          headers: {
+            'X-Api-Key': process.env.NINJAS_API_KEY
+          }
+        })
+        .then(response => {
+          store.training.workouts = response.data
+          console.log(store.training.workouts);
+          done();
+        })
+        .catch(err => {
+          console.log(err);
+        });
       });
     }
-
     router.updatePageLinks();
-
     // add menu toggle to bars icon in nav bar
     document.querySelector(".fa-bars").addEventListener("click", () => {
         document.querySelector("nav > ul").classList.toggle("hidden--mobile");

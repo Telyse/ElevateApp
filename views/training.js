@@ -1,36 +1,27 @@
+/* eslint-disable no-unused-vars */
 import html from "html-literal";
 
-export default () => html`
+export default state => html`
   <main>
-    <section id="beginner">
-      <h2 class="lato-regular">Beginner</h2>
-      <p3 class="lato-regular"
-        >New to Exercising? Get started with a beginner friendly workout!</p3
-      >
-      <a href="https://www.youtube.com/watch?v=UItWltVZZmE&t=2s"
-        >Link to Workout</a
-      >
-    </section>
+    <select id="muscle-group">
+      <option value="chest">Chest</option>
+      <option value="lower-back">Lower Back</option>
+      <option value="middle-back">Middle Back</option>
+      <option value="biceps">Biceps</option>
+      <option value="triceps">Triceps</option>
+      <option value="abdominal">Abdominal</option>
+      <option value="abductors">Abductors</option>
+      <option value="adductors">Adductors</option>
+      <option value="calves">Calves</option>
+      <option value="forearms">Forearms</option>
+      <option value="glutes">Glutes</option>
+      <option value="hamstrings">Hamstrings</option>
+      <option value="lats">Lats</option>
+      <option value="quadriceps">Quadriceps</option>
+      <option value="traps">Traps</option>
+      <option value="neck">Neck</option>
+    </select>
 
-    <section id="moderate">
-      <h2 class="lato-regular">Moderate</h2>
-      <p3 class="lato-regular"
-        >Want to maintain your current fitness level and exercise pattern? Try
-        the moderate workout!</p3
-      >
-      <a href="https://www.youtube.com/watch?v=qditvmztsfg&t=1s"
-        >Link to Workout</a
-      >
-    </section>
-
-    <section id="challenge">
-      <h2 class="lato-regular">Challenging</h2>
-      <p3 class="lato-regular"
-        >Already an expert? Try the challenging routine below!</p3
-      >
-      <a href="https://www.youtube.com/watch?v=-YpRYNREDV8&t=7s"
-        >Lik to Workout</a
-      >
-    </section>
+    <button id="my-button">Click Me!</button>
   </main>
 `;
