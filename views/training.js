@@ -5,8 +5,8 @@ export default state => html`
   <main>
     <select id="muscle-group">
       <option value="chest">Chest</option>
-      <option value="lower-back">Lower Back</option>
-      <option value="middle-back">Middle Back</option>
+      <option value="lower_back">Lower Back</option>
+      <option value="middle_back">Middle Back</option>
       <option value="biceps">Biceps</option>
       <option value="triceps">Triceps</option>
       <option value="abdominal">Abdominal</option>
