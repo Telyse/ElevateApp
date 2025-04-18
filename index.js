@@ -24,18 +24,14 @@ router.hooks({
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
-      case " ":
-        // New Axios get request utilizing already made environment variable
+      // New Axios get request utilizing already made environment variable
+      case "home":
+        // Get request to retrieve the status
         axios
-          .get(``)
+          .get(`${process.env.API_URL}/status`)
           .then(response => {
-             // Storing retrieved data in state
-            // The dot chain variable access represents the following {storeFolder.stateFileViewName.objectAttribute}
-            ;
-            done();
-          })
-          .catch((error) => {
-            console.log("It puked", error);
+            console.log("response.data", response.data);
+
             done();
           });
           break;
