@@ -24,12 +24,34 @@ export default state => html`
 
     <button id="my-button">Click Me!</button>
 
-    ${state.workouts
-      .map(workout => {
-        return `<tr>
-          <td>${workout.difficulty}</td>
-        </tr>`;
-      })
-      .join("")}
+    <table>
+      ${state.workouts
+        .map(workout => {
+          return `<ul id="myUL">
+  <li><span class="caret">${workout.name}</span>
+    <ul class="nested">
+      <li>${workout.difficulty}</li>
+      <li>${workout.instructions}</li>
+      <li> *put video link here* </li>
+      <li><span class="caret"></span>
+        <ul class="nested">
+          <li>Black Tea</li>
+          <li>White Tea</li>
+          <li><span class="caret">Green Tea</span>
+            <ul class="nested">
+              <li>Sencha</li>
+              <li>Gyokuro</li>
+              <li>Matcha</li>
+              <li>Pi Lo Chun</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>`;
+        })
+        .join("")}
+    </table>
   </main>
 `;
