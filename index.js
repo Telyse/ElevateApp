@@ -31,7 +31,6 @@ router.hooks({
           .get(`${process.env.API_URL}/status`)
           .then(response => {
             console.log("response.data", response.data);
-
             done();
           });
           break;
@@ -43,7 +42,17 @@ router.hooks({
   },
   already: (match) => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
-
+    if (view === "training") {
+                /*Source from W3 Schools */
+                var toggler = document.getElementsByClassName("caret");
+                var i;
+                for (i = 0; i < toggler.length; i++) {
+                  toggler[i].addEventListener("click", function() {
+                    this.parentElement.querySelector(".nested").classList.toggle("active");
+                    this.classList.toggle("caret-down");
+                  });
+                }
+    }
     render(store[view]);
   },
   after: (match) => {
@@ -57,8 +66,8 @@ router.hooks({
         console.log("Selected Muscle Group:", store.training.selected);
       });
 
-      document.getElementById("my-button").addEventListener("click", () => {
-
+      document.querySelector("#get-Options").addEventListener("submit", (event) => {
+        event.preventDefault();
         axios
         .get(`${process.env.NINJAS_URL}?muscle=${store.training.selected}`, {
           headers: {

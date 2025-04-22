@@ -2,5 +2,6 @@ export default {
   header: "training page",
   view: "training",
   workouts: [],
-  selected: ""
+  selected: "",
+  saved: []
 };

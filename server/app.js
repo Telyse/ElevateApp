@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
 import mongoose from "mongoose";
+import trainings from "./controllers/trainings.js";
 
 dotenv.config();
 
@@ -42,6 +43,7 @@ const cors = (request, response, next) => {
 app.use(cors);
 app.use(express.json());
 app.use(logging);
+app.use("/trainings", trainings);
 
 app.get("/status", (request, response) => {
   response.json({ message: "Service healthy" });

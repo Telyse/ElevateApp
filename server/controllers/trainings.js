@@ -1,12 +1,12 @@
 import { Router } from "express";
-import training from "../models/training.js";
+import workout from "../models/training.js";
 
 const router = Router();
 
 // Create workout route
 router.post("/", async (request, response) => {
   try {
-    const newTraining = new training(request.body);
+    const newTraining = new workout(request.body);
 
     const data = await newTraining.save();
 
@@ -27,7 +27,7 @@ router.get("/", async (request, response) => {
     const query = request.query;
     console.log("query", request.query);
 
-    const data = await training.find(query);
+    const data = await workout.find(query);
 
     response.json(data);
   } catch (error) {
@@ -40,7 +40,7 @@ router.get("/", async (request, response) => {
 // Get a single workout by ID
 router.get("/:id", async (request, response) => {
   try {
-    const data = await training.findById(request.params.id);
+    const data = await workout.findById(request.params.id);
 
     response.json(data);
   } catch (error) {
@@ -49,3 +49,5 @@ router.get("/:id", async (request, response) => {
     return response.status(500).json(error.errors);
   }
 });
+
+export default router;

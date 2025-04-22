@@ -1,5 +1,4 @@
 import mongoose from "mongoose";
-import { training } from "../../views";
 
 const workoutSchema = new mongoose.Schema({
   exerciseRoutine: [
@@ -7,21 +6,43 @@ const workoutSchema = new mongoose.Schema({
       muscle: {
         type: String,
         required: true,
-        enum: ["chest", "lower_back", "middle_back", "biceps", "triceps", "abdominal",
-          "abductors", "adductors", "calves", "forearms", "glutes", "hamstrings", "lats",
-          "quadriceps", "traps", "neck"]
+        enum: [
+          "chest",
+          "lower_back",
+          "middle_back",
+          "biceps",
+          "triceps",
+          "abdominal",
+          "abductors",
+          "adductors",
+          "calves",
+          "forearms",
+          "glutes",
+          "hamstrings",
+          "lats",
+          "quadriceps",
+          "traps",
+          "neck"
+        ]
       },
       name: {
         type: String,
         required: true,
-        validate: /^[A-Za-z]*$/
+        validate: /^[A-Za-z ]*$/
       },
       type: {
         type: String,
         required: true,
-        enum: ["cardio", "olympic_weightlifting", "plyometrics", "powerlifting", "strength",
-          "stretching", "strongman"]
-      }
+        enum: [
+          "cardio",
+          "olympic_weightlifting",
+          "plyometrics",
+          "powerlifting",
+          "strength",
+          "stretching",
+          "strongman"
+        ]
+      },
       difficulty: {
         type: String,
         required: true,
@@ -41,4 +62,4 @@ const workoutSchema = new mongoose.Schema({
   ]
 });
 const workout = mongoose.model("workout", workoutSchema);
-export default training;
+export default workout;
