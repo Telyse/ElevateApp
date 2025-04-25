@@ -3,6 +3,7 @@ import * as store from "./store";
 import Navigo from "navigo";
 import { camelCase } from "lodash";
 import axios from "axios";
+import { training } from "./views";
 
 const router = new Navigo("/");
 
@@ -20,10 +21,17 @@ router.hooks({
   // The `match` parameter is the data that is passed from Navigo to the before hook handler with details about the route being accessed.
   // https://github.com/krasimir/navigo/blob/master/DOCUMENTATION.md#match
   before: (done, match) => {
-    // We need to know what view we are on to know what data to fetch
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
+      case "workout":
+        axios
+        .get(`${process.env.API_URL}/trainings`)
+        .then(response => {
+          console.log("response.data", response.data);
+          store.workout.savedWorkouts = response.data
+          done();
+        })
       // New Axios get request utilizing already made environment variable
       case "home":
         // Get request to retrieve the status
@@ -43,15 +51,15 @@ router.hooks({
   already: (match) => {
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
     if (view === "training") {
-                /*Source from W3 Schools */
-                var toggler = document.getElementsByClassName("caret");
-                var i;
-                for (i = 0; i < toggler.length; i++) {
-                  toggler[i].addEventListener("click", function() {
-                    this.parentElement.querySelector(".nested").classList.toggle("active");
-                    this.classList.toggle("caret-down");
-                  });
-                }
+       /*Source from W3 Schools */
+        var toggler = document.getElementsByClassName("caret");
+        var i;
+        for (i = 0; i < toggler.length; i++) {
+          toggler[i].addEventListener("click", function() {
+          this.parentElement.querySelector(".nested").classList.toggle("active");
+          this.classList.toggle("caret-down");
+            });
+        }
     }
     render(store[view]);
   },
@@ -60,32 +68,71 @@ router.hooks({
 
     if (view === "training") {
       const dropdown = document.getElementById("muscle-group");
+
       dropdown.addEventListener("change", function() {
         const selectedValue = this.value;
+
         store.training.selected = selectedValue
         console.log("Selected Muscle Group:", store.training.selected);
       });
 
       document.querySelector("#get-Options").addEventListener("submit", (event) => {
         event.preventDefault();
+
         axios
         .get(`${process.env.NINJAS_URL}?muscle=${store.training.selected}`, {
           headers: {
             'X-Api-Key': process.env.NINJAS_API_KEY
           }
         })
+
         .then(response => {
           store.training.workouts = response.data
-          console.log(store.training.workouts);
+          console.log(response.data);
           router.navigate("/training");
         })
+
         .catch(err => {
           console.log(err);
         });
       });
+
+      document.querySelector("#save").addEventListener("submit", event => {
+        event.preventDefault();
+
+        const inputList = event.target.elements;
+        console.log("Input Element List", inputList);
+
+        const workouts = [];
+        for(let input of inputList.selection) {
+          console.log("input id:", inputList);
+          for (let storeWorkout of store.training.workouts) {
+            if (Object.values(storeWorkout).includes(input.id)) {
+              workouts.push(storeWorkout);
+            }
+          }
+        }
+        console.log(workouts);
+
+        const requestData = {
+          exerciseRoutine: workouts
+        }
+        console.log("request body", requestData);
+
+        axios
+        .post(`${process.env.API_URL}/trainings`, requestData)
+        .then(response => {
+          store.training.saved.push(response.data);
+          console.log("saved training data", store.training.saved);
+          router.navigate("/training");
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        })
+      })
     }
     router.updatePageLinks();
-    // add menu toggle to bars icon in nav bar
+
     document.querySelector(".fa-bars").addEventListener("click", () => {
         document.querySelector("nav > ul").classList.toggle("hidden--mobile");
     });

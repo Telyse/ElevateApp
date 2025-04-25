@@ -27,8 +27,7 @@ const workoutSchema = new mongoose.Schema({
       },
       name: {
         type: String,
-        required: true,
-        validate: /^[A-Za-z ]*$/
+        required: true
       },
       type: {
         type: String,
@@ -50,13 +49,11 @@ const workoutSchema = new mongoose.Schema({
       },
       equipment: {
         type: String,
-        required: false,
-        validate: /^[A-Za-z0-9 ]*$/
+        required: false
       },
       instructions: {
         type: String,
-        required: true,
-        validate: /^[A-Za-z0-9,.' ]*$/
+        required: true
       }
     }
   ]

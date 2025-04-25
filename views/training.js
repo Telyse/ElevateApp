@@ -5,6 +5,7 @@ export default state => html`
   <main>
     <form id="get-Options">
       <select id="muscle-group">
+        <option value="select" selected="true" disabled>select</option>
         <option value="chest">Chest</option>
         <option value="lower_back">Lower Back</option>
         <option value="middle_back">Middle Back</option>
@@ -42,7 +43,7 @@ export default state => html`
 </ul>`;
           })
           .join("")}
-        <button id="save-button" type="submit">Save your workout!</button>
+        <input id="save-button" type="submit" value="Save your workout" />
       </table>
     </form>
   </main>
