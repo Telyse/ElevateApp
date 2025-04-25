@@ -24,6 +24,14 @@ router.hooks({
     const view = match?.data?.view ? camelCase(match.data.view) : "home";
     // Add a switch case statement to handle multiple routes
     switch (view) {
+      case "workout":
+        axios
+        .get(`${process.env.API_URL}/trainings`)
+        .then(response => {
+          console.log("response.data", response.data);
+          store.workout.savedWorkouts = response.data
+          done();
+        })
       // New Axios get request utilizing already made environment variable
       case "home":
         // Get request to retrieve the status
@@ -96,10 +104,14 @@ router.hooks({
         console.log("Input Element List", inputList);
 
         const workouts = [];
-        for( let input of inputList.selection) {
-          if (input.checked) {
-            workouts.push(input.value);
-          }}
+        for(let input of inputList.selection) {
+          console.log("input id:", inputList);
+          for (let storeWorkout of store.training.workouts) {
+            if (Object.values(storeWorkout).includes(input.id)) {
+              workouts.push(storeWorkout);
+            }
+          }
+        }
         console.log(workouts);
 
         const requestData = {
@@ -111,7 +123,7 @@ router.hooks({
         .post(`${process.env.API_URL}/trainings`, requestData)
         .then(response => {
           store.training.saved.push(response.data);
-          console.log(store.training.saved);
+          console.log("saved training data", store.training.saved);
           router.navigate("/training");
         })
         .catch(error => {
