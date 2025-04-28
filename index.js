@@ -29,9 +29,11 @@ router.hooks({
         .get(`${process.env.API_URL}/trainings`)
         .then(response => {
           console.log("response.data", response.data);
-          store.workout.savedWorkouts = response.data
+          store.workout.savedWorkouts = response.data.reverse();
+          console.log(store.workout.savedWorkouts[0])
           done();
         })
+        break;
       // New Axios get request utilizing already made environment variable
       case "home":
         // Get request to retrieve the status
@@ -90,6 +92,40 @@ router.hooks({
           store.training.workouts = response.data
           console.log(response.data);
           router.navigate("/training");
+
+          document.querySelector("#save").addEventListener("submit", event => {
+            event.preventDefault();
+
+            const inputList = event.target.querySelectorAll("input:checked");
+            console.log("Input Element List", inputList);
+
+            const workouts = [];
+            for(let input of inputList) {
+              console.log("input id:", inputList);
+              for (let storeWorkout of store.training.workouts) {
+                if (Object.values(storeWorkout).includes(input.id)) {
+                  workouts.push(storeWorkout);
+                }
+              }
+            }
+            console.log(workouts);
+
+            const requestData = {
+              exerciseRoutine: workouts
+            }
+            console.log("request body", requestData);
+
+            axios
+            .post(`${process.env.API_URL}/trainings`, requestData)
+            .then(response => {
+              store.workout.savedWorkouts.push(response.data);
+              console.log("saved training data", store.workout.savedWorkouts);
+              router.navigate("/workout");
+            })
+            .catch(error => {
+              console.log("Error:", error);
+            })
+          })
         })
 
         .catch(err => {
@@ -97,39 +133,7 @@ router.hooks({
         });
       });
 
-      document.querySelector("#save").addEventListener("submit", event => {
-        event.preventDefault();
 
-        const inputList = event.target.elements;
-        console.log("Input Element List", inputList);
-
-        const workouts = [];
-        for(let input of inputList.selection) {
-          console.log("input id:", inputList);
-          for (let storeWorkout of store.training.workouts) {
-            if (Object.values(storeWorkout).includes(input.id)) {
-              workouts.push(storeWorkout);
-            }
-          }
-        }
-        console.log(workouts);
-
-        const requestData = {
-          exerciseRoutine: workouts
-        }
-        console.log("request body", requestData);
-
-        axios
-        .post(`${process.env.API_URL}/trainings`, requestData)
-        .then(response => {
-          store.training.saved.push(response.data);
-          console.log("saved training data", store.training.saved);
-          router.navigate("/training");
-        })
-        .catch(error => {
-          console.log("Error:", error);
-        })
-      })
     }
     router.updatePageLinks();
 

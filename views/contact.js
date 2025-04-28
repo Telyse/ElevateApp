@@ -9,17 +9,17 @@ export default () => html`
   </section>
 
   <form>
-    <div>
+    <div class="name">
       <label for="name">Name</label>
       <input id="name" name="name" type="name" required />
     </div>
 
-    <div>
+    <div class="email">
       <label for="email">Email</label>
       <input id="email" name="email" type="email" />
     </div>
 
-    <div>
+    <div class="comment">
       <label for="Comment">comment</label>
       <input id="comment" name="comment" type="comment" required />
     </div>
