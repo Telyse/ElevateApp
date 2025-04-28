@@ -35,15 +35,15 @@ router.hooks({
         })
         break;
       // New Axios get request utilizing already made environment variable
-      case "home":
-        // Get request to retrieve the status
-        axios
-          .get(`${process.env.API_URL}/status`)
-          .then(response => {
-            console.log("response.data", response.data);
-            done();
-          });
-          break;
+      // case "home":
+      //   // Get request to retrieve the status
+      //   axios
+      //     .get(`${process.env.API_URL}/status`)
+      //     .then(response => {
+      //       console.log("response.data", response.data);
+      //       done();
+      //     });
+      //     break;
       default :
         // We must call done for all views so we include default for the views that don't have cases above.
         done();
