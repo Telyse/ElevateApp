@@ -11,7 +11,11 @@ export default () => html`
     </section>
 
     <section id="form">
-      <form action="https://formspree.io/f/xnndnbrl" method="POST">
+      <form
+        id="contact-form"
+        action="https://formspree.io/f/xnndnbrl"
+        method="POST"
+      >
         <div class="name">
           <label for="name">Name</label>
           <input id="name" name="name" type="name" required />
@@ -27,7 +31,7 @@ export default () => html`
           <input id="comment" name="comment" type="comment" required />
         </div>
 
-        <input type="submit" value="send" name="submit" />
+        <input type="submit" class="button" value="send" name="submit" />
       </form>
     </section>
   </main>

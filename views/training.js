@@ -2,7 +2,7 @@
 import html from "html-literal";
 
 export default state => html`
-  <main>
+  <main id="train-center">
     <form id="get-Options">
       <select id="muscle-group">
         <option value="select" selected="true" disabled>select</option>
@@ -24,7 +24,7 @@ export default state => html`
         <option value="neck">Neck</option>
       </select>
 
-      <button id="my-button" type="submit">Click Me!</button>
+      <button id="my-button" class="button" type="submit">Click Me!</button>
     </form>
 
     <form id="save">
@@ -43,7 +43,12 @@ export default state => html`
 </ul>`;
           })
           .join("")}
-        <input id="save-button" type="submit" value="Save your workout" />
+        <input
+          id="save-button"
+          class="button"
+          type="submit"
+          value="Save your workout"
+        />
       </table>
     </form>
   </main>
