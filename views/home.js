@@ -1,7 +1,7 @@
 import html from "html-literal";
 
 export default () => html`
-  <main>
+  <main class="intro">
     <section id="Motivation">
       <p class="lato-regular">
         Step right up and get ready to flex those muscles with a twist! We're

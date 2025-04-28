@@ -1,8 +1,8 @@
 import html from "html-literal";
 
 export default () => html`
-  <main>
-    <section id="bio">
+  <main class="about">
+    <section id="app-purpose">
       <h2 class="lato-regular">What is the purpose of this App?</h2>
       <p class="lato-regular">
         Elevate is where people come to set and achieve goals. It's intended

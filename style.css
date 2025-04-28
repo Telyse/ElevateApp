@@ -3,13 +3,21 @@ html {
   color:white;
 }
 
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .lato-regular {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-style: normal;
 }
 
-#h1 {
+header {
+  display: flex;
   justify-content: center;
   align-items: center;
   color: white;
@@ -109,12 +117,31 @@ ul, #myUL {
   display: block;
 }
 
+/*training page */
+#train-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*about page */
+
+
 /* Contact page */
 #bio {
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
 }
 
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
 
 /* Footer */
 .footer {
@@ -125,4 +152,8 @@ ul, #myUL {
   background-color: #333;
   color: white;
   text-align: center;
+}
+
+.button:hover {
+    background-color: rgb(90, 236, 90);
 }
