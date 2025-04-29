@@ -50,7 +50,6 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
-
 .nav-Flex {
   display: flex;
   flex-direction: row;
@@ -88,13 +87,11 @@ ul, #myUL {
   padding: 0;
 }
 
-/* Style the caret/arrow */
 .caret {
   cursor: pointer;
   user-select: none; /* Prevent text selection */
 }
 
-/* Create the caret/arrow with a unicode, and style it */
 .caret::before {
   content: "\25B6";
   color: black;
@@ -102,17 +99,14 @@ ul, #myUL {
   margin-right: 6px;
 }
 
-/* Rotate the caret/arrow icon when clicked on (using JavaScript) */
 .caret-down::before {
   transform: rotate(90deg);
 }
 
-/* Hide the nested list */
 .nested {
   display: none;
 }
 
-/* Show the nested list when the user clicks on the caret/arrow (with JavaScript) */
 .active {
   display: block;
 }
@@ -126,7 +120,12 @@ ul, #myUL {
 }
 
 /*about page */
-
+#about {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 
 /* Contact page */
 #bio {
@@ -143,6 +142,11 @@ ul, #myUL {
   gap: 30px;
 }
 
+#comment {
+  height: 50px;
+  width: 175px;
+}
+
 /* Footer */
 .footer {
   position: fixed;
@@ -156,4 +160,50 @@ ul, #myUL {
 
 .button:hover {
     background-color: rgb(90, 236, 90);
+    border-radius: 12px;
 }
+
+.text-box {
+  border: 2px solid rgb(90, 236, 90);
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  background-color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #f9f9f9;
+}
+
+.about-box {
+    border: 2px solid rgb(90, 236, 90);
+    padding: 50px;
+    margin: 75px;
+    border-radius: 10px;
+    background-color: #333;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+    color: #f9f9f9;
+  }
+
+.contact-box {
+  border: 2px solid rgb(90, 236, 90);
+  padding: 10px;
+  margin: 75px;
+  border-radius: 10px;
+  background-color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: #f9f9f9;
+}
+
+.training-box {
+  border: 2px solid rgb(90, 236, 90);
+  padding: 50px;
+  margin: 75px;
+  border-radius: 10px;
+  background-color: #333;
+  font-family: Arial, sans-serif;
+  font-size: 18px;
+  color: rgb(90, 236, 90);
+}
+

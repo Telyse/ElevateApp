@@ -2,6 +2,8 @@ Telyse
 
 Name: Elevate
 
+software engineer project manager
+
 //Definition statement:
 I want to build an application that helps others improve their overall health by reducing
 risk of chronic diseases, maintaining a healthy weight, boosting their mood, increasing energy
@@ -19,36 +21,14 @@ time to "Elevate" themselves by improving their overall health. Finding time do 
 users have no time to focus on themselves.
 
 //Target Audience:
-My target audience is everyone. Anyone of different backgrounds, genders, age, whatever you name it.
-For  beginners who are new to fitness and want to get started, Individuals with busy schedules
-who want flexible workouts & simple but healthy meals,  fitness enthusiasts who are already active
-and want to improve their fitness, etc.
+My target audience is beginners
 
 // Navigation:
-I want to use a tabs navigation with combining flat/lateral & hierarchial structures. My vision
-for the app is to see each page in the tabs, once clicking the which ever page, you see all
-content related to each page. I think combining both structures will help create the vision I have
-for the application, using the navigation above. I would also like to use a search navigation for
-the nutrition/food page. I would like to have a feature that lets users search macronutrients,
-calories, etc.
+start with home screen explain each page
 
-// Functions on each page:
-1. The dashboard or home page, which the main functions wil be a form and hoover-click function. For
-now that's all that I've planned to use for the first page, I will probably use more once the
-application is being actively created.
+// Function of app:
+user fitness choice as well as saved workouts
 
-2. The workout page functions will be a hoover-click, deleting & adding workout functions, timer, and
-a save progress function (I don't know if there is an actual name for a "save progress" function,
-so I will name it as stated above). This will the main functions for the second page.
-
-3. The nutrition page functions will have a search bar, hoover-click, and save function. These
-will be the first few functions used on the third page. I would like the search bar and save
-to be the focal points for this page. I might also add a function that lets users add and save recipes
-(This isn't for certain but definitely a idea for the future).
-
-4. The About Me/contact page will have a hoover-click and form function. The form will be used for users
-to give me their concerns and/ or feedback. This will be the the first thing you notice about the
-4th and final page of this application.
 
 // Font:
 The font will be Lato

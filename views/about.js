@@ -1,31 +1,26 @@
 import html from "html-literal";
 
 export default () => html`
-  <main class="about">
-    <section id="app-purpose">
+  <main id="about">
+    <div class="about-box">
       <h2 class="lato-regular">What is the purpose of this App?</h2>
       <p class="lato-regular">
-        Elevate is where people come to set and achieve goals. It's intended
-        purpose is to help others better their health, while having fun!
+        At Elevate, our mission is simple: to help you live a healthier, happier
+        life. We created this app to support you in improving your overall
+        health — by reducing the risk of chronic diseases, maintaining a healthy
+        weight, boosting your mood, increasing energy levels, and promoting
+        better sleep. What better way to achieve that than through a fun,
+        motivating fitness experience? Elevate is designed to help you set
+        goals, track your progress, receive valuable health tips, and stay
+        inspired along the way. Our focus is on building habits that stick — so
+        you can stay consistent with your workouts, your nutrition, and your
+        overall wellness journey. Because when you consistently meet your goals,
+        you don’t just improve your body — you elevate your self-esteem, your
+        confidence, and your entire life. Helping you reach your full potential
+        brings us a deep sense of accomplishment. We truly believe that by
+        empowering individuals like you, we’re helping create a more positive,
+        happier, and stronger world.
       </p>
-    </section>
-
-    <section id="content">
-      <h2 class="lato-regular">Who am I?</h2>
-      <p class="lato-regular">
-        I wanted to build an application that helps others improve their overall
-        health by reducing risk of chronic diseases, maintaining a healthy
-        weight, boosting their mood, increase energy levels, and promoting
-        better sleep. What better way to do that than creating a fitness
-        application. The main focus of my application is for users to set goals,
-        track progress, receive beneficial health tips, and stay motivated. I
-        would love for my application to help users stay motivated and
-        consistent with their workout routines and diet. Consistently meeting
-        one's goals can boost self esteem and sense of accomplishment, improving
-        overall health. In doing this, helping others elevate their lives brings
-        me to a state accomplishment, because I believe that I’m helping create
-        a more happy, positive, and confident society!
-      </p>
-    </section>
+    </div>
   </main>
 `;

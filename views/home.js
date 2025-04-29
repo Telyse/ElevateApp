@@ -2,19 +2,26 @@ import html from "html-literal";
 
 export default () => html`
   <main class="intro">
+    <div class="text-box"
     <section id="Motivation">
       <p class="lato-regular">
-        Step right up and get ready to flex those muscles with a twist! We're
-        not your average fitness App think of us as the quirky carnival of
-        fitness where every workout is an adventure. Come for the sweat, stay
-        for the smiles, and leave with a story worth telling!
+        Welcome to Elevate your new happy place for goals, growth, and good
+        times! Here, we’re all about helping you dream bigger, move smarter, and
+        feel stronger, one small victory at a time. Think of us as your personal
+        cheer squad, fitness buddy, and goal-setting guru all rolled into one.
+        Whether you're here to boost your energy, conquer a new challenge, or
+        simply have a blast while getting healthier, Elevate is where your
+        journey takes off with a smile, a sweat, and a whole lot of high-fives
+        along the way!
       </p>
     </section>
+</div>
 
-    <section id="Quote">
+    <div class="text-box">
       <p class="lato-regular">
-        "The key to success is to focus on goals, not obstacles."
+        "You don’t have to be extreme, just consistent — and a little bit crazy
+        helps too."
       </p>
-    </section>
+    </div>
   </main>
 `;
